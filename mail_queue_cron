@@ -1,0 +1,1 @@
+0/15 * * * * /usr/bin/php /cpanel_clear_mail_queue/clear_queue
