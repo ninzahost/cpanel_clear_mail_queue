@@ -1,0 +1,17 @@
+<?php
+@ob_start();
+@error_reporting(0);
+
+
+$ex=shell_exec("whmapi1 --output=json fetch_mail_queue");
+$js=json_decode($ex,1);
+$total=count($js['data']['records']);
+
+echo "\n";
+echo "Total: $total\n\n";
+
+if($total > 1000)
+{
+shell_exec("exim -bp | awk '/^ *[0-9]+[mhd]/{print \"exim -Mrm \" $3}' | bash");
+echo "» Mail Queue cleared..\n\n";
+}
