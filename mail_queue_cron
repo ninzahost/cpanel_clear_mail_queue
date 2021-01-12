@@ -1,1 +1,1 @@
-*/15 * * * * /usr/bin/php /cpanel_clear_mail_queue/clear_queue
+*/5 * * * * /usr/bin/php /root/cpanel_clear_mail_queue/clear_queue
