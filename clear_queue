@@ -11,6 +11,6 @@ echo "Total: $total\n\n";
 
 if($total > 1000)
 {
-shell_exec("/usr/sbin/exim -bp | awk '/^ *[0-9]+[mhd]/{print \"exim -Mrm \" $3}' | bash");
+shell_exec("/usr/sbin/exim -bpu |/bin/awk '{print $3}'|/usr/bin/xargs /usr/sbin/exim -Mrm");
 echo "» Mail Queue cleared..\n\n";
 }
