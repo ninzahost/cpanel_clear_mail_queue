@@ -2,7 +2,6 @@
 @ob_start();
 @error_reporting(0);
 
-
 $ex=shell_exec("/usr/local/cpanel/bin/whmapi1 --output=json fetch_mail_queue");
 $js=json_decode($ex,1);
 $total=count($js['data']['records']);
